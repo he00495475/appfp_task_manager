@@ -16,7 +16,7 @@ class LocalNotificationService {
     tz.setLocalLocation(tz.getLocation('Asia/Taipei')); // 將時區設定為台北標準時間
   }
 
-  Future<void> initialize() async {
+  static Future<void> initialize() async {
     ///初始化在Android上的通知設定
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');

@@ -108,6 +108,14 @@ class TaskViewModel extends ChangeNotifier {
       }
     }
     notifyListeners();
+
+    final now = DateTime.now();
+    final dueDate =
+        DateTime.fromMillisecondsSinceEpoch(int.parse(task.dueDate) * 1000);
+
+    if (dueDate.isAfter(now)) {
+      _notificationService.showNotification(dueDate, task.title);
+    }
   }
 
   Future<void> deleteTask(String id) async {

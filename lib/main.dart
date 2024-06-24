@@ -22,6 +22,7 @@ void main() async {
       const Settings(persistenceEnabled: true);
 
   await LocalNotificationService.init();
+  await LocalNotificationService.initialize();
 
   runApp(
     MultiProvider(
